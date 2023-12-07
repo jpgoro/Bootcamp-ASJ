@@ -63,8 +63,6 @@ function vaciarCarrito() {
 // Función para procesar el pago
 function pagar() {
     if (carrito.length > 0) {
-        // Aquí puedes implementar la lógica de pago real
-        // Puedes mostrar un mensaje simulando el éxito del pago
         const mensajeCompra = document.getElementById('mensajeCompra');
         mensajeCompra.textContent = 'Su compra se realizó con éxito. ¡Que la disfrutes!';
         vaciarCarrito();
