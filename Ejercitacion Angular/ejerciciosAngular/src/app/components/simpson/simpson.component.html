@@ -1,1 +1,71 @@
-<p>simpson works!</p>
+<section class=" ">
+  <div class="row container-fluid">
+    <div class="col-4 ms-5">
+      <article class="d-flex flex-column mt-5">
+        <input
+        [(ngModel)]="nombreInput"
+        type="text"
+        class="form-control mb-5 mt-5"
+        placeholder="Nombre"
+        aria-label="Nombre"
+        />
+        <input
+        [(ngModel)]="imagenInput"
+        type="text"
+        class="form-control mb-5 mt-5"
+        placeholder="URL de imagen"
+        aria-label="URL de imagen"
+        /><input
+        [(ngModel)]="profesionInput"
+        type="text"
+        class="form-control mb-5 mt-5"
+        placeholder="Profesión"
+        aria-label="Profesión"
+        />
+        <button type="button" class="btn btn-warning btn-lg mt-5" (click)="agregarInformacion()">
+          ENVIAR
+        </button>
+      </article>
+    </div>
+    <div class="col-7 border-black border-1">
+      <!-- <article class="mt-lg-5"
+      >
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">IMAGEN</th>
+              <th scope="col">NOMBRE</th>
+              <th scope="col">PROFESIÓN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>email</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </article> -->
+      <article class="mt-lg-5">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">IMAGEN</th>
+              <th scope="col">NOMBRE</th>
+              <th scope="col">PROFESIÓN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fila of datosTabla">
+              <td><img [src]="fila.imagen" alt="Imagen"></td>
+              <td>{{ fila.nombre }}</td>
+              <td>{{ fila.profesion }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+  </div>
+</section>
