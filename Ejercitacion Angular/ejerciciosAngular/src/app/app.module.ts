@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideComponent } from './components/side/side.component';
 import { Proyecto1Component } from './components/proyecto1/proyecto1.component';
+import { SimpsonComponent } from './components/simpson/simpson.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { Proyecto1Component } from './components/proyecto1/proyecto1.component';
     HeaderComponent,
     FooterComponent,
     SideComponent,
-    Proyecto1Component
+    Proyecto1Component,
+    SimpsonComponent
   ],
   imports: [
     BrowserModule,
