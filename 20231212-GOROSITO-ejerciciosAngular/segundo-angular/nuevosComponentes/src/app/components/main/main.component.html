@@ -1,0 +1,47 @@
+
+<main class="main bg-success">
+  <div class="contariner ">
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary bg-danger text-black" type="button" id="button-addon1">Button</button>
+          <input type="text" class="form-control" placeholder={{carpinchos}} aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+      </div>
+    </div>
+    <div class="row container-fluid mt-5">
+      <div class="col-3 container-fluid">
+        <div class="card" style="width: 18rem">
+          <img src={{imagen}} class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 container-fluid ">
+        <div class="card" style="width: 18rem">
+          <img src={{imagen}} class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 container-fluid">
+        <p>{{texto1}}</p>
+        <ul>
+          <li *ngFor="let prod of compras">{{ prod }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

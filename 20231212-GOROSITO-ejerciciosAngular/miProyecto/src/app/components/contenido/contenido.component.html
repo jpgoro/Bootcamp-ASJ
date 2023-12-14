@@ -1,0 +1,18 @@
+<p class="bg-secondary">{{texto}}</p>
+<app-lista></app-lista>
+<p>{{numero}}</p>
+<button class="btn btn-danger" (click)="incrementar()">+</button>
+<button (click)="generarAleatorio()">generar aleatorio</button>
+<button (click)="decrementar()">-</button>
+
+<div *ngIf="!flag">
+    <h3>HOlaaaa</h3>
+</div>
+
+
+<p>Este es un listado de compras</p>
+<ul>
+  <li *ngFor="let prod of compras">{{prod}}</li>  
+</ul>
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promesas</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="poke" placeholder="Ingrese el nº del Pokemon" />
+      <button id="buscar">Buscar</button>
+      <img src="" alt="" id="imagen" />
+      <p id="info"></p>
+    </div>
+    <script>
+      let buscar = document.getElementById("buscar");
+      let imagen = document.getElementById("imagen");
+      let info = document.getElementById("info");
+
+      buscar.addEventListener("click", () => {
+        let poke = document.getElementById("poke").value;
+
+        // let xhttp = new XMLHttpRequest();
+        // xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${poke}`);
+        // xhttp.send();
+
+        // xhttp.onreadystatechange = function () {
+        //   if (this.readyState == 4 && this.status == 200) {
+        //     let datoPokemon = JSON.parse(this.responseText);
+        //     console.log(datoPokemon);
+        //     imagen.setAttribute("src", datoPokemon.sprites.front_default);
+        //     info.innerText = datoPokemon.name;
+        //   }
+        // };
+
+        //FETCH
+        console.log("utilizando FETCH");
+
+        fetch(`https://pokeapi.co/api/v2/pokemon/${poke}`)
+          .then((response) => response.json()) //convertir a JSON
+          .then((json) => {
+            console.log(json.name);
+            info.innerText = json.name;
+            imagen.setAttribute("src", json.sprites.front_default);
+          })
+          .catch((error) => console.log("Ocurrió un error: " + error));
+      });
+
+      //PROMESAS
+
+      // console.log("Instrucción 1");
+
+      // let completo = false;
+      // //Promesa
+      // const promesa = new Promise((resolve, reject) => {
+      //   //llamada a un servidor o API
+      //   setTimeout(() => {
+      //     if (completo) {
+      //       resolve([
+      //         { id: 1, nombre: "Juan" },
+      //         { id: 2, nombre: "Camila" },
+      //       ]);
+      //     } else {
+      //       reject("Error al obtener los datos del API");
+      //     }
+      //   }, 3000);
+      // });
+
+      // promesa
+      //   .then((respuesta) => {
+      //     console.log(respuesta);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   }).finally(()=>{
+
+      //   });
+
+      // console.log("Instrucción 2");
+      // console.log("Instrucción 3");
+    </script>
+  </body>
+</html>
