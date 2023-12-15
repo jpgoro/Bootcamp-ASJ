@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SideComponent } from './components/side/side.component';
 import { Proyecto1Component } from './components/proyecto1/proyecto1.component';
 import { SimpsonComponent } from './components/simpson/simpson.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SimpsonComponent } from './components/simpson/simpson.component';
     FooterComponent,
     SideComponent,
     Proyecto1Component,
-    SimpsonComponent
+    SimpsonComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
