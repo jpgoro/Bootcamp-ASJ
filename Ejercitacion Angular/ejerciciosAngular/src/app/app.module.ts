@@ -12,6 +12,11 @@ import { SideComponent } from './components/side/side.component';
 import { Proyecto1Component } from './components/proyecto1/proyecto1.component';
 import { SimpsonComponent } from './components/simpson/simpson.component';
 import { HomeComponent } from './components/home/home.component';
+import { RickAndMortyComponent } from './components/rick-and-morty/rick-and-morty.component';
+import { CardRickAndMortyComponent } from './components/rick-and-morty/card-rick-and-morty/card-rick-and-morty.component';
+import { ServiceRickService } from './services/service-rick.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -23,13 +28,15 @@ import { HomeComponent } from './components/home/home.component';
     SideComponent,
     Proyecto1Component,
     SimpsonComponent,
-    HomeComponent
+    HomeComponent,
+    RickAndMortyComponent,
+    CardRickAndMortyComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule, NgbModule
+    AppRoutingModule,FormsModule, NgbModule, HttpClientModule
   ],
-  providers: [],
+  providers: [ServiceRickService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
