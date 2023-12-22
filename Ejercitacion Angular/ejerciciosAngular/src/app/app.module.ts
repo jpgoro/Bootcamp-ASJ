@@ -16,6 +16,8 @@ import { RickAndMortyComponent } from './components/rick-and-morty/rick-and-mort
 import { CardRickAndMortyComponent } from './components/rick-and-morty/card-rick-and-morty/card-rick-and-morty.component';
 import { ServiceRickService } from './services/service-rick.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MiPipePipe } from './pipe/mi-pipe.pipe';
+import { Pipes1Component } from './components/pipes1/pipes1.component';
 
 
 
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     SimpsonComponent,
     HomeComponent,
     RickAndMortyComponent,
-    CardRickAndMortyComponent
+    CardRickAndMortyComponent,
+    MiPipePipe,
+    Pipes1Component
   ],
   imports: [
     BrowserModule,
