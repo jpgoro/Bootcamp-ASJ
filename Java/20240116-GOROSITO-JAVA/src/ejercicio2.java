@@ -41,7 +41,6 @@ public class ejercicio2 {
 //		todos los números impares a las celdas restantes. Utiliza arrays auxiliares si es necesario.
 
 		int[] array = new int[20];
-		int[] aux1;
 		for (int i = 0; i < 20; i++) {
 			array[i] = (int) (Math.random() * 100) + 1;
 		}

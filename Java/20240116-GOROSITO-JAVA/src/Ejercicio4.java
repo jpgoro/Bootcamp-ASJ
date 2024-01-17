@@ -7,7 +7,7 @@ public class Ejercicio4 {
 //		Generar una matriz de 3×3 con números aleatorios sin repetirse.
 		int[][] matriz = generarMatrizAleatoriaSinRepetir(3, 3);
 
-        // Imprimir la matriz generada
+        
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 System.out.print(matriz[i][j] + " ");
@@ -24,7 +24,6 @@ public class Ejercicio4 {
 
         Random random = new Random();
 
-        // Generar la matriz con números aleatorios sin repetirse
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 int indice = random.nextInt(cantidadNumeros);

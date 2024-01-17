@@ -9,13 +9,13 @@ public class Ejercicio5 {
 //		(preguntar al usuario que desea sumar, si una fila o una columna, y cual de ellas).
 //		Extra: mostrar el resultado al final de la fila/columna correspondiente
 
-		int[][] matriz = generarMatrizAleatoriaSinRepetir(3, 3);
+		int[][] matriz = generarMatriz(3, 3);
 
 		System.out.println("Matriz generada:");
 		imprimirMatriz(matriz);
 
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("\n¿Desea sumar una fila o una columna? (fila/columna): ");
+		System.out.print("\n¿Desea sumar una fila o una columna? Escribir fila o columna: ");
 		String eleccion = scanner.nextLine().toLowerCase();
 
 		if (eleccion.equals("fila")) {
@@ -33,7 +33,7 @@ public class Ejercicio5 {
 		scanner.close();
 	}
 
-	private static int[][] generarMatrizAleatoriaSinRepetir(int filas, int columnas) {
+	private static int[][] generarMatriz(int filas, int columnas) {
 		if (filas * columnas > 9) {
 			throw new IllegalArgumentException("No hay suficientes números disponibles para llenar la matriz");
 		}
