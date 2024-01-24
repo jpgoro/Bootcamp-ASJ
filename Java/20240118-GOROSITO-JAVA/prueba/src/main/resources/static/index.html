@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cliente HTTP</title>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input,
+		textarea {
+			width: 100%;
+			padding: 8px;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+		}
+
+		button {
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		#response {
+			margin-top: 20px;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Postman 2.0</h2>
+
+	<label for="url">URL:</label>
+	<input type="text" id="url" placeholder="Enter URL">
+
+	<label for="method">Metodo HTTP:</label>
+	<select id="method">
+		<option value="GET">GET</option>
+		<option value="POST">POST</option>
+		<option value="PUT">PUT</option>
+		<option value="DELETE">DELETE</option>
+	</select>
+
+	<label for="requestBody">Request Body:</label>
+	<textarea id="requestBody" rows="4" placeholder="Enter request body"></textarea>
+
+	<button onclick="postman()">Enviar solicitud</button>
+
+	<div id="response">
+		<h3>Respuesta:</h3>
+		<div id="responseData"></div>
+	</div>
+	<script>
+		function postman() {
+			const url = document.getElementById("url").value;
+			const method = document.getElementById("method").value;
+			const requestBody = document.getElementById("requestBody").value;
+			if (method == "GET") {
+				fetch(url, {
+					method: method,
+					headers: {
+						'Content-Type': 'application/json'
+					},
+				})
+					.then(response => response.json())
+					.then(data => {
+						document.getElementById("responseData").innerText = JSON.stringify(data, null, 2);
+					})
+			} else {
+				fetch(url, {
+					method: method,
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: requestBody
+				})
+					.then(response => response.json())
+					.then(data => {
+						document.getElementById("responseData").innerText = JSON.stringify(data, null, 2);
+					})
+			}
+		}
+	</script>
+</body>
+
+</html>
